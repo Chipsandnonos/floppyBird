@@ -7,6 +7,7 @@ class Bird
   float jumpBoost;
   float accUp;
   float birdRad;
+  PImage bird;
   Bird()
   {
     xPos = width/2;
@@ -16,11 +17,13 @@ class Bird
     jumpBoost = -15;
     accUp = 3;
     birdRad = 20;
+    bird = loadImage("fatBird.png");
   }
 
   void drawBird()
   {
     ellipse(xPos, yPos, birdRad, birdRad);
+    image(bird, xPos - birdRad/2, yPos - birdRad/2, 43.5, 30 );
   }
 
   void jumpBird()

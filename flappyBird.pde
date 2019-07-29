@@ -1,5 +1,5 @@
 Bird b; //<>// //<>// //<>// //<>//
-int col;
+PImage back;
 //Pipe[] pipes = new Pipe[3]; array of objects
 ArrayList<Pipe> pipes; //decalres arraylist
 //array lists can have anything in them, but <> specifies only 1 type of thing which will be allowed 
@@ -8,20 +8,20 @@ float count;
 // good thing about array lists is that with them you can easily and or remove stuff from them, unlike regular arrays
 void setup()
 {
-  size (640, 360);
+  size (600, 800);
   b = new Bird();
-
+  back = loadImage("background.png");
   pipes = new ArrayList<Pipe>(); //initializes array list
   pipes.add( new Pipe()); // adds a new pipe object to the array list
 }
 
 void draw()
 {
-  background(50);
+  background(back);
   
   b.birdSpeed();
   b.moveBird();
-  boolean crashed;
+
 
   for (int i = 0; i<pipes.size(); i++) //will draw and move every pipe in the  array
   {
